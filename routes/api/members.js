@@ -9,17 +9,8 @@ import {
   deleteMember,
 } from "../../controllers/members.js";
 
-// Gets all members
-router.get("/", getAllMembers);
+// Gets all members § Create Member
+router.route("/").get(getAllMembers).post(createMember);
 
-// Get Single Member
-router.get("/:id", getMember);
-
-// Create Member
-router.post("/", createMember);
-
-// Update Member
-router.put("/:id", updateMember);
-
-// Delete Member
-router.delete("/:id", deleteMember);
+// Get Single Member & Update Member & Delete Member
+router.route("/:id").get(getMember).put(updateMember).delete(deleteMember);
