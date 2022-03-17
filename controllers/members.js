@@ -25,7 +25,7 @@ export const createMember = (req, res) => {
   };
 
   if (!newMember.name || !newMember.email) {
-    return res.status(400).json({ msg: "Please include a message an email" });
+    return res.status(400).json({ msg: "Please include a name and email" });
   }
 
   members.push(newMember);
